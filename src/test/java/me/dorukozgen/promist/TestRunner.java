@@ -25,13 +25,15 @@ public class TestRunner {
 
         @Before
         public void before(Scenario scenario) {
-                System.setProperty(
-                        "webdriver.chrome.driver",
-                        Paths.get("").resolve("src/test/resources/chromedriver.exe").toAbsolutePath().toString()
-                );
+                if (DriverManagement.getInstance().getDriver() == null) {
+                        System.setProperty(
+                                "webdriver.chrome.driver",
+                                Paths.get("").resolve("src/test/resources/chromedriver.exe").toAbsolutePath().toString()
+                        );
 
-                DriverManagement.getInstance().setDriver();
-                DriverManagement.getInstance().setWait();
+                        DriverManagement.getInstance().setDriver();
+                        DriverManagement.getInstance().setWait();
+                }
         }
 
         @After

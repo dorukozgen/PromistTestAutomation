@@ -24,7 +24,7 @@ public class PromistTest {
         mainPage.checkNavbar();
     }
 
-    @Then("Menüdeki tüm sayfa yönlendirmelerine tiklama yap ve çalıştığını kontrol et")
+    @Then("Menüdeki tüm sayfa yönlendirmelerine tıklama yap ve çalıştığını kontrol et")
     public void menudeki_tum_sayfa_yonlendirmelerine_tiklama_yap_ve_calıstigini_kontrol_et() {
         mainPage.clickNavLinks();
     }
