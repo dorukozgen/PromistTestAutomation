@@ -14,7 +14,7 @@ import java.nio.file.Paths;
 @Suite
 @IncludeEngines("cucumber")
 @ConfigurationParameters({
-        @ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME, value = "pretty,html:target/cucumber-reports/DesktopTestReport.html"),
+        @ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME, value = "pretty,html:target/cucumber-reports/DesktopTestReport.html,json:target/cucumber-reports/DesktopTestReport.json"),
         @ConfigurationParameter(
                 key = Constants.GLUE_PROPERTY_NAME,
                 value = "me.dorukozgen.promist.stepDefinitions,me.dorukozgen.promist"
