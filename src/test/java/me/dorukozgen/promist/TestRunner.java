@@ -2,6 +2,7 @@ package me.dorukozgen.promist;
 
 import io.cucumber.java.*;
 import io.cucumber.junit.platform.engine.Constants;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import me.dorukozgen.promist.managers.DriverManagement;
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.ConfigurationParameters;
@@ -26,10 +27,12 @@ public class TestRunner {
         @Before
         public void before(Scenario scenario) {
                 if (DriverManagement.getInstance().getDriver() == null) {
-                        System.setProperty(
-                                "webdriver.chrome.driver",
-                                Paths.get("").resolve("src/test/resources/chromedriver.exe").toAbsolutePath().toString()
-                        );
+                        // System.setProperty(
+                        //        "webdriver.chrome.driver",
+                        //         Paths.get("").resolve("src/test/resources/chromedriver.exe").toAbsolutePath().toString()
+                        // );
+
+                        WebDriverManager.chromedriver().setup();
 
                         DriverManagement.getInstance().setDriver();
                         DriverManagement.getInstance().setWait();
